@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#120d18">
+  <title>Tom Kirk 💩 — The silly animation lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#home">💩 <span>TOM KIRK</span></a>
+      <span class="tag">THE SILLY ANIMATION LAB</span>
+    </header>
+
+    <section class="hero" id="home">
+      <p class="eyebrow">A VERY IMPORTANT SCIENTIFIC EXPERIMENT</p>
+      <h1>Welcome to<br><span>Tom Kirk.</span></h1>
+      <p class="intro">Press the poop button. You know what happens next.</p>
+
+      <div class="stage" aria-live="polite">
+        <button id="poopButton" class="poop-button" type="button" aria-label="Reveal Tom Kirk">💩</button>
+        <div class="spark spark-one">✦</div>
+        <div class="spark spark-two">✧</div>
+        <div class="spark spark-three">✦</div>
+        <p id="status" class="status">Awaiting ridiculousness...</p>
+      </div>
+
+      <div class="actions">
+        <button id="animateButton" class="primary" type="button">POOP BUTTON 💩</button>
+        <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="true">🔊 SOUND ON</button>
+      </div>
+
+      <section id="reveal" class="reveal" hidden aria-live="polite">
+        <p class="reveal-label">THE LEGEND HAS ARRIVED</p>
+        <img src="{{ url_for('static', filename='tom-kirk.jpg') }}" alt="Tom Kirk" class="tom-photo">
+        <h2>TOM KIRK!</h2>
+        <button id="closeReveal" class="sound-toggle" type="button">Close</button>
+      </section>
+
+      <div class="paste-card">
+        <label for="pasteBox">PASTE SOMETHING HERE</label>
+        <textarea id="pasteBox" rows="3" placeholder="Tap here, then paste some text..."></textarea>
+        <p class="hint">Pasting text triggers the silly animation. The pasted text stays on this page.</p>
+      </div>
+      <a href="#home" id="replayLink" class="replay">Replay the silliness ↗</a>
+    </section>
+    <footer>TOM KIRK · MADE FOR LAUGHS</footer>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
